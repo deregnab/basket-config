@@ -1,3 +1,5 @@
+# Basket config
+
 ## BasketBack
 Utilisation d'un docker pour chaque technos
 
@@ -55,4 +57,12 @@ Utilisation des networks a la place du link (necessite d'utiliser le nom du cont
 
 ```sh
 $ curl 127.0.0.1:8080
+```
+
+## BasketFront
+Utilisation d'un docker angular
+Redirection du port 4200 vers le port 80 sur la machine hote
+
+```sh
+$ sudo docker container run --name basketfront -v $(pwd):/opt/app -w /opt/app -d -p 80:4200 teracy/angular-cli ng serve --host=0.0.0.0
 ```
